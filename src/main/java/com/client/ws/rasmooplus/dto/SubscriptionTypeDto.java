@@ -1,5 +1,7 @@
 package com.client.ws.rasmooplus.dto;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -17,14 +19,17 @@ public class SubscriptionTypeDto {
 
 	private Long id;
 
-	@Size(min = 5, max = 30, message = "deve ter tamanho entre 5 e 30")
+	@NotBlank(message = "O campo name não pode ser vazio")
+	@Size(min = 5, max = 30, message = "Deve ter o tamanho entre 5 e 30")
 	private String name;
 
+	@Max(value= 12, message = "O campo accessMonth não pode ser maior do que 12")
 	private Long accessMonths;
 
-	@NotNull(message = "não pode ser nulo")
+	@NotNull(message = "O campo preço não pode ser nulo")
 	private BigDecimal price;
 
-	@Size(min = 5, max = 15, message = "deve ter tamanho entre 5 e 15")
+	@NotBlank(message = "O campo productKey não pode ser vazio")
+	@Size(min = 5, max = 15, message = "Deve ter tamanho entre 5 e 15")
 	private String productKey;
 }
