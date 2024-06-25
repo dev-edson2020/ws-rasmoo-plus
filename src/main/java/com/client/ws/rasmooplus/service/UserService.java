@@ -10,8 +10,8 @@ import com.client.ws.rasmooplus.model.User;
 public interface UserService {
 
 	User create(UserDto dto);
-	User uploadPhoto(Long id, MultipartFile file) throws IOException;
-
-	byte[] downloadPhoto(Long id);
+//	User uploadPhoto(Long id, MultipartFile file) throws IOException;
+//
+//	byte[] downloadPhoto(Long id);
 
 }
