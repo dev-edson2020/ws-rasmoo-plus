@@ -1,6 +1,7 @@
 package com.client.ws.rasmooplus.controller;
 
 import com.client.ws.rasmooplus.dto.UserDto;
+import com.client.ws.rasmooplus.model.SubscriptionType;
 import com.client.ws.rasmooplus.model.User;
 import com.client.ws.rasmooplus.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 import jakarta.validation.Valid;
 
@@ -20,6 +22,12 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+
+	@GetMapping
+	public ResponseEntity<List<User>> findAll() {
+		return ResponseEntity.status(HttpStatus.OK)
+				.body(userService.findAll());
+	}
 
 	@PostMapping
 	public ResponseEntity<User> create(@Valid @RequestBody UserDto dto) {

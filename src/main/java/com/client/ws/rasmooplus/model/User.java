@@ -9,12 +9,15 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
 @Table(name = "users")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class User implements Serializable {
 
 	@Id
@@ -44,7 +47,7 @@ public class User implements Serializable {
 
 //	private byte[] photo;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "user_type_id")
 	private UserType userType;
 

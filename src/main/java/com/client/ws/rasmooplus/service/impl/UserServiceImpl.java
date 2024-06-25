@@ -1,10 +1,9 @@
 package com.client.ws.rasmooplus.service.impl;
 
-import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.client.ws.rasmooplus.dto.UserDto;
 import com.client.ws.rasmooplus.exception.BadRequestException;
@@ -48,7 +47,12 @@ public class UserServiceImpl implements UserService {
 		return userRepository.save(user);
 	}
 
-//	@Override
+	@Override
+	public List<User> findAll() {
+		return userRepository.findAll();
+	}
+
+	//	@Override
 //	public User uploadPhoto(Long id, MultipartFile file) throws IOException {
 //		return null;
 //	}
