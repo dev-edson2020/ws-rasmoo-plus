@@ -4,8 +4,11 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.stereotype.Service;
 
+import com.client.ws.rasmooplus.controller.SubscriptionTypeController;
 import com.client.ws.rasmooplus.dto.SubscriptionTypeDto;
 import com.client.ws.rasmooplus.exception.BadRequestException;
 import com.client.ws.rasmooplus.exception.NotFoundException;
@@ -16,6 +19,9 @@ import com.client.ws.rasmooplus.service.SubscriptionTypeService;
 
 @Service
 public class SubscriptionTypeServiceImpl implements SubscriptionTypeService {
+
+	private static final String UPDATE = "update";
+	private static final String DELETE = "delete";
 
 	private final SubscriptionTypeRepository subscriptionTypeRepository;
 
@@ -29,8 +35,18 @@ public class SubscriptionTypeServiceImpl implements SubscriptionTypeService {
 	}
 
 	@Override
+	@Cacheable(value = "subscriptionType", key = "#id")
 	public SubscriptionType findById(Long id) {
-		return getSubscriptionType(id);
+		return getSubscriptionType(id).add(WebMvcLinkBuilder.linkTo(
+						WebMvcLinkBuilder.methodOn(SubscriptionTypeController.class).findById(id))
+				.withSelfRel()
+		).add(WebMvcLinkBuilder.linkTo(
+						WebMvcLinkBuilder.methodOn(SubscriptionTypeController.class).update(id,new SubscriptionTypeDto()))
+				.withRel(UPDATE)
+		).add(WebMvcLinkBuilder.linkTo(
+						WebMvcLinkBuilder.methodOn(SubscriptionTypeController.class).delete(id))
+				.withRel(DELETE)
+		);
 	}
 
 	@Override
