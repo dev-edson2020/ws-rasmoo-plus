@@ -10,7 +10,7 @@ import com.client.ws.rasmooplus.dto.wsraspay.OrderDto;
 import com.client.ws.rasmooplus.dto.wsraspay.PaymentDto;
 import com.client.ws.rasmooplus.exception.NotFoundException;
 import com.client.ws.rasmooplus.exception.handler.BusinessException;
-import com.client.ws.rasmooplus.integration.Mailintegration;
+import com.client.ws.rasmooplus.integration.MailIntegration;
 import com.client.ws.rasmooplus.integration.WsRaspayIntegration;
 import com.client.ws.rasmooplus.mapper.UserPaymentInfoMapper;
 import com.client.ws.rasmooplus.mapper.wsraspay.CreditCardMapper;
@@ -29,10 +29,10 @@ public class PaymentInfoServiceImpl implements PaymentInfoService {
 	private final UserRepository userRepository;
 	private final UserPaymentInfoRepository userPaymentInfoRepository;
 	private final WsRaspayIntegration wsRaspayIntegration;
-	private final Mailintegration mailIntegration;
+	private final MailIntegration mailIntegration;
 
 	PaymentInfoServiceImpl(UserRepository userRepository, UserPaymentInfoRepository userPaymentInfoRepository,
-			WsRaspayIntegration wsRaspayIntegration, Mailintegration mailIntegration) {
+			WsRaspayIntegration wsRaspayIntegration, MailIntegration mailIntegration) {
 		this.userRepository = userRepository;
 		this.userPaymentInfoRepository = userPaymentInfoRepository;
 		this.wsRaspayIntegration = wsRaspayIntegration;
@@ -60,16 +60,16 @@ public class PaymentInfoServiceImpl implements PaymentInfoService {
 		PaymentDto paymentDto = PaymentMapper.build(customerDto.getId(), orderDto.getId(),
 				CreditCardMapper.build(dto.getUserPaymentInfoDto(), user.getCpf()));
 		Boolean successPayment = wsRaspayIntegration.processPayment(paymentDto);
-		if(successPayment) {
+		if(Boolean.TRUE.equals(successPayment)) {
 			//Salvar informações de pagamento
 			UserPaymentInfo userPaymentInfo = UserPaymentInfoMapper.fromDtoToEntity(dto.getUserPaymentInfoDto(), user);
 			userPaymentInfoRepository.save(userPaymentInfo);
 			mailIntegration.send(user.getEmail(), "Usuário: "+user.getEmail()+" - Senha: alunorasmoo", "Acesso liberado");
+		    return true;
 		}
-
 		//Enviar email de confirmação de conta
 		//Retorna sucesso ou não do pagamento
 
-		return null;
+		return false;
 	}
 }
