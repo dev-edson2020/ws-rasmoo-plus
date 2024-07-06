@@ -11,8 +11,8 @@ import com.client.ws.rasmooplus.exception.NotFoundException;
 import com.client.ws.rasmooplus.mapper.UserMapper;
 import com.client.ws.rasmooplus.model.User;
 import com.client.ws.rasmooplus.model.UserType;
-import com.client.ws.rasmooplus.repository.UserRepository;
-import com.client.ws.rasmooplus.repository.UserTypeRepository;
+import com.client.ws.rasmooplus.repository.jpa.UserRepository;
+import com.client.ws.rasmooplus.repository.jpa.UserTypeRepository;
 import com.client.ws.rasmooplus.service.UserService;
 
 @Service

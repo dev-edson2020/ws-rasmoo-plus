@@ -14,7 +14,7 @@ import com.client.ws.rasmooplus.exception.BadRequestException;
 import com.client.ws.rasmooplus.exception.NotFoundException;
 import com.client.ws.rasmooplus.mapper.SubscriptionTypeMapper;
 import com.client.ws.rasmooplus.model.SubscriptionType;
-import com.client.ws.rasmooplus.repository.SubscriptionTypeRepository;
+import com.client.ws.rasmooplus.repository.jpa.SubscriptionTypeRepository;
 import com.client.ws.rasmooplus.service.SubscriptionTypeService;
 
 @Service

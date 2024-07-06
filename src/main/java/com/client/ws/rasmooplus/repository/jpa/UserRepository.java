@@ -1,4 +1,4 @@
-package com.client.ws.rasmooplus.repository;
+package com.client.ws.rasmooplus.repository.jpa;
 
 import com.client.ws.rasmooplus.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
