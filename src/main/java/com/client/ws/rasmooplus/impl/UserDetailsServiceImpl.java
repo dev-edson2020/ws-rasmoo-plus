@@ -1,4 +1,4 @@
-package com.client.ws.rasmooplus.service.impl;
+package com.client.ws.rasmooplus.impl;
 
 import com.client.ws.rasmooplus.dto.UserDetailsDto;
 import com.client.ws.rasmooplus.exception.BadRequestException;
@@ -8,7 +8,7 @@ import com.client.ws.rasmooplus.model.jpa.UserCredentials;
 import com.client.ws.rasmooplus.model.redis.UserRecoveryCode;
 import com.client.ws.rasmooplus.repository.jpa.UserDetailsRepository;
 import com.client.ws.rasmooplus.repository.redis.UserRecoveryCodeRepository;
-import com.client.ws.rasmooplus.service.UserDetailsService;
+import com.client.ws.rasmooplus.UserDetailsService;
 import com.client.ws.rasmooplus.utils.PasswordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

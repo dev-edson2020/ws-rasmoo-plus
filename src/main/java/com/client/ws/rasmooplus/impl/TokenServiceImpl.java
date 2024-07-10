@@ -1,6 +1,7 @@
-package com.client.ws.rasmooplus.service.impl;
+package com.client.ws.rasmooplus.impl;
 
-import com.client.ws.rasmooplus.service.TokenService;
+import com.client.ws.rasmooplus.TokenService;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;

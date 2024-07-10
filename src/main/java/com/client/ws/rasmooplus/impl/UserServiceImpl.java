@@ -1,10 +1,11 @@
-package com.client.ws.rasmooplus.service.impl;
+package com.client.ws.rasmooplus.impl;
 
 import java.util.List;
 import java.util.Objects;
 
 import org.springframework.stereotype.Service;
 
+import com.client.ws.rasmooplus.UserService;
 import com.client.ws.rasmooplus.dto.UserDto;
 import com.client.ws.rasmooplus.exception.BadRequestException;
 import com.client.ws.rasmooplus.exception.NotFoundException;
@@ -13,7 +14,6 @@ import com.client.ws.rasmooplus.model.jpa.User;
 import com.client.ws.rasmooplus.model.jpa.UserType;
 import com.client.ws.rasmooplus.repository.jpa.UserRepository;
 import com.client.ws.rasmooplus.repository.jpa.UserTypeRepository;
-import com.client.ws.rasmooplus.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {

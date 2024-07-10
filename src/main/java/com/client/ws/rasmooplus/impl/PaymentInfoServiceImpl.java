@@ -1,5 +1,6 @@
-package com.client.ws.rasmooplus.service.impl;
+package com.client.ws.rasmooplus.impl;
 
+import com.client.ws.rasmooplus.PaymentInfoService;
 import com.client.ws.rasmooplus.dto.PaymentProcessDto;
 import com.client.ws.rasmooplus.dto.wsraspay.CustomerDto;
 import com.client.ws.rasmooplus.dto.wsraspay.OrderDto;
@@ -22,7 +23,6 @@ import com.client.ws.rasmooplus.repository.jpa.UserDetailsRepository;
 import com.client.ws.rasmooplus.repository.jpa.UserPaymentInfoRepository;
 import com.client.ws.rasmooplus.repository.jpa.UserRepository;
 import com.client.ws.rasmooplus.repository.jpa.UserTypeRepository;
-import com.client.ws.rasmooplus.service.PaymentInfoService;
 import com.client.ws.rasmooplus.utils.PasswordUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

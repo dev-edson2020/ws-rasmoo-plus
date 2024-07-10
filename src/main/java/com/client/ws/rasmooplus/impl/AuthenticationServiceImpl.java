@@ -1,12 +1,13 @@
-package com.client.ws.rasmooplus.service.impl;
+package com.client.ws.rasmooplus.impl;
 
+import com.client.ws.rasmooplus.AuthenticationService;
+import com.client.ws.rasmooplus.TokenService;
+import com.client.ws.rasmooplus.UserDetailsService;
 import com.client.ws.rasmooplus.dto.LoginDto;
 import com.client.ws.rasmooplus.dto.TokenDto;
 import com.client.ws.rasmooplus.exception.BadRequestException;
 import com.client.ws.rasmooplus.model.jpa.UserCredentials;
-import com.client.ws.rasmooplus.service.AuthenticationService;
-import com.client.ws.rasmooplus.service.TokenService;
-import com.client.ws.rasmooplus.service.UserDetailsService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.client.ws.rasmooplus.service;
+package com.client.ws.rasmooplus;
 
 import org.springframework.context.annotation.Bean;
 
