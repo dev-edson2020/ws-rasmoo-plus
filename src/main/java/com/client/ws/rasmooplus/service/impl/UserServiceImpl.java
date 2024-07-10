@@ -1,11 +1,10 @@
-package com.client.ws.rasmooplus.impl;
+package com.client.ws.rasmooplus.service.impl;
 
 import java.util.List;
 import java.util.Objects;
 
 import org.springframework.stereotype.Service;
 
-import com.client.ws.rasmooplus.UserService;
 import com.client.ws.rasmooplus.dto.UserDto;
 import com.client.ws.rasmooplus.exception.BadRequestException;
 import com.client.ws.rasmooplus.exception.NotFoundException;

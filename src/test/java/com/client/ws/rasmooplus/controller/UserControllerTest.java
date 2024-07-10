@@ -1,7 +1,7 @@
 package com.client.ws.rasmooplus.controller;
 
+import com.client.ws.rasmooplus.service.impl.UserService;
 import com.client.ws.rasmooplus.model.jpa.User;
-import com.client.ws.rasmooplus.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;

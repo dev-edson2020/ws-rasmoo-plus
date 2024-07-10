@@ -1,4 +1,4 @@
-package com.client.ws.rasmooplus;
+package com.client.ws.rasmooplus.service.impl;
 
 import com.client.ws.rasmooplus.dto.UserDetailsDto;
 import com.client.ws.rasmooplus.model.jpa.UserCredentials;

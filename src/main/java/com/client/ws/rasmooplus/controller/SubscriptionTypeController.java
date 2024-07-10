@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.client.ws.rasmooplus.dto.SubscriptionTypeDto;
 import com.client.ws.rasmooplus.model.jpa.SubscriptionType;
-import com.client.ws.rasmooplus.SubscriptionTypeService;
+import com.client.ws.rasmooplus.service.impl.SubscriptionTypeService;
 
 import jakarta.validation.Valid;
 

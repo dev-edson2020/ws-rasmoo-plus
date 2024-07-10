@@ -1,6 +1,5 @@
-package com.client.ws.rasmooplus.impl;
+package com.client.ws.rasmooplus.service.impl;
 
-import com.client.ws.rasmooplus.PaymentInfoService;
 import com.client.ws.rasmooplus.dto.PaymentProcessDto;
 import com.client.ws.rasmooplus.dto.wsraspay.CustomerDto;
 import com.client.ws.rasmooplus.dto.wsraspay.OrderDto;

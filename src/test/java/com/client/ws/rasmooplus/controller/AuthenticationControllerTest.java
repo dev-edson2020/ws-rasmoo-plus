@@ -1,13 +1,12 @@
 package com.client.ws.rasmooplus.controller;
 
+import com.client.ws.rasmooplus.service.impl.AuthenticationService;
+import com.client.ws.rasmooplus.service.impl.UserDetailsService;
 import com.client.ws.rasmooplus.dto.LoginDto;
-import com.client.ws.rasmooplus.dto.SubscriptionTypeDto;
 import com.client.ws.rasmooplus.dto.TokenDto;
 import com.client.ws.rasmooplus.dto.UserDetailsDto;
-import com.client.ws.rasmooplus.model.jpa.SubscriptionType;
 import com.client.ws.rasmooplus.model.redis.UserRecoveryCode;
-import com.client.ws.rasmooplus.service.AuthenticationService;
-import com.client.ws.rasmooplus.service.UserDetailsService;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +19,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.math.BigDecimal;
-
 import static org.hamcrest.Matchers.is;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;

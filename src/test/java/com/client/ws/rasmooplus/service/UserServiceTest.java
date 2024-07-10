@@ -3,28 +3,22 @@ package com.client.ws.rasmooplus.service;
 import com.client.ws.rasmooplus.dto.UserDto;
 import com.client.ws.rasmooplus.exception.BadRequestException;
 import com.client.ws.rasmooplus.exception.NotFoundException;
-import com.client.ws.rasmooplus.impl.UserServiceImpl;
 import com.client.ws.rasmooplus.model.jpa.User;
 import com.client.ws.rasmooplus.model.jpa.UserType;
 import com.client.ws.rasmooplus.repository.jpa.UserRepository;
 import com.client.ws.rasmooplus.repository.jpa.UserTypeRepository;
+import com.client.ws.rasmooplus.service.impl.UserServiceImpl;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.http.MediaType;
-import org.springframework.mock.web.MockMultipartFile;
 
-import java.io.FileInputStream;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)

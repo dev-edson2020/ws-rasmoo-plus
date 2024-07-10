@@ -1,7 +1,8 @@
 package com.client.ws.rasmooplus.repositoy.jpa;
 
-import com.client.ws.rasmooplus.controller.AuthenticationController;
 import com.client.ws.rasmooplus.model.jpa.SubscriptionType;
+import com.client.ws.rasmooplus.repository.jpa.SubscriptionTypeRepository;
+
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

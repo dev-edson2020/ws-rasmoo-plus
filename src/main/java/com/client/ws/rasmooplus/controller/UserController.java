@@ -2,7 +2,7 @@ package com.client.ws.rasmooplus.controller;
 
 import com.client.ws.rasmooplus.dto.UserDto;
 import com.client.ws.rasmooplus.model.jpa.User;
-import com.client.ws.rasmooplus.UserService;
+import com.client.ws.rasmooplus.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

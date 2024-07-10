@@ -1,8 +1,8 @@
 package com.client.ws.rasmooplus.repositoy.redis;
 
-import com.client.ws.rasmooplus.model.jpa.SubscriptionType;
-import com.client.ws.rasmooplus.model.redis.UserRecoveryCode;
-import com.client.ws.rasmooplus.repositoy.jpa.SubscriptionTypeRepository;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -10,16 +10,14 @@ import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.redis.AutoConfigureDataRedis;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.ActiveProfiles;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import com.client.ws.rasmooplus.model.redis.UserRecoveryCode;
+import com.client.ws.rasmooplus.repository.redis.UserRecoveryCodeRepository;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @AutoConfigureDataRedis
 @AutoConfigureTestDatabase

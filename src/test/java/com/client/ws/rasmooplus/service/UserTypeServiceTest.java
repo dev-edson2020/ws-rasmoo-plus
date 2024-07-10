@@ -1,8 +1,8 @@
 package com.client.ws.rasmooplus.service;
 
-import com.client.ws.rasmooplus.impl.UserTypeServiceImpl;
 import com.client.ws.rasmooplus.model.jpa.UserType;
 import com.client.ws.rasmooplus.repository.jpa.UserTypeRepository;
+import com.client.ws.rasmooplus.service.impl.UserTypeServiceImpl;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

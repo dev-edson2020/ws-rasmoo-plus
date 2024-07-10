@@ -1,4 +1,4 @@
-package com.client.ws.rasmooplus;
+package com.client.ws.rasmooplus.service.impl;
 
 import java.util.List;
 

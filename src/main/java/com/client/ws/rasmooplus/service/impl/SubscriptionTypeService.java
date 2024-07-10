@@ -1,4 +1,4 @@
-package com.client.ws.rasmooplus;
+package com.client.ws.rasmooplus.service.impl;
 
 import java.util.List;
 
@@ -17,4 +17,5 @@ public interface SubscriptionTypeService {
 
 	void delete(Long id);
 
+	void update(Object any, Object any1);
 }

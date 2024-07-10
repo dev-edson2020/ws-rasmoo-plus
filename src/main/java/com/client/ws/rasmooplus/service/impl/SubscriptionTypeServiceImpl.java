@@ -1,4 +1,4 @@
-package com.client.ws.rasmooplus.impl;
+package com.client.ws.rasmooplus.service.impl;
 
 import java.util.List;
 import java.util.Objects;
@@ -15,7 +15,6 @@ import com.client.ws.rasmooplus.exception.NotFoundException;
 import com.client.ws.rasmooplus.mapper.SubscriptionTypeMapper;
 import com.client.ws.rasmooplus.model.jpa.SubscriptionType;
 import com.client.ws.rasmooplus.repository.jpa.SubscriptionTypeRepository;
-import com.client.ws.rasmooplus.SubscriptionTypeService;
 
 @Service
 public class SubscriptionTypeServiceImpl implements SubscriptionTypeService {
@@ -68,6 +67,11 @@ public class SubscriptionTypeServiceImpl implements SubscriptionTypeService {
 	public void delete(Long id) {
 		getSubscriptionType(id);
 		subscriptionTypeRepository.deleteById(id);
+	}
+
+	@Override
+	public void update(Object any, Object any1) {
+
 	}
 
 	private SubscriptionType getSubscriptionType(Long id) {
