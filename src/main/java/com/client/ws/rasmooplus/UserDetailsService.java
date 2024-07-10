@@ -1,7 +1,7 @@
 package com.client.ws.rasmooplus.service;
 
 import com.client.ws.rasmooplus.dto.UserDetailsDto;
-import com.client.ws.rasmooplus.model.UserCredentials;
+import com.client.ws.rasmooplus.model.jpa.UserCredentials;
 
 public interface UserDetailsService {
 

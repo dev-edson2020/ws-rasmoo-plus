@@ -1,13 +1,9 @@
 package com.client.ws.rasmooplus.service;
 
-import java.io.IOException;
 import java.util.List;
 
-import org.springframework.web.multipart.MultipartFile;
-
 import com.client.ws.rasmooplus.dto.UserDto;
-import com.client.ws.rasmooplus.model.SubscriptionType;
-import com.client.ws.rasmooplus.model.User;
+import com.client.ws.rasmooplus.model.jpa.User;
 
 public interface UserService {
 

@@ -3,7 +3,7 @@ package com.client.ws.rasmooplus.service;
 import java.util.List;
 
 import com.client.ws.rasmooplus.dto.SubscriptionTypeDto;
-import com.client.ws.rasmooplus.model.SubscriptionType;
+import com.client.ws.rasmooplus.model.jpa.SubscriptionType;
 
 public interface SubscriptionTypeService {
 

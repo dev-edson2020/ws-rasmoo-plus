@@ -1,17 +1,13 @@
 package com.client.ws.rasmooplus.controller;
 
 import com.client.ws.rasmooplus.dto.UserDto;
-import com.client.ws.rasmooplus.model.SubscriptionType;
-import com.client.ws.rasmooplus.model.User;
-import com.client.ws.rasmooplus.service.UserService;
+import com.client.ws.rasmooplus.model.jpa.User;
+import com.client.ws.rasmooplus.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.List;
 
 import jakarta.validation.Valid;
