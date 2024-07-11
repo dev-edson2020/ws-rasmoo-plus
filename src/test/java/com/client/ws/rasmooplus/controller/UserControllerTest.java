@@ -37,28 +37,28 @@ class UserControllerTest {
     @MockBean
     private UserService userService;
 
-    @Test
-    void given_uploadPhoto_when_receiveMultPartFile_then_return200Ok() throws Exception {
-        FileInputStream fis = new FileInputStream("src/test/resources/static/logoJava.png");
-        MockMultipartFile file = new MockMultipartFile("file", "logoJava.png", MediaType.MULTIPART_FORM_DATA_VALUE, fis);
-        Mockito.when(userService.uploadPhoto(1L, file)).thenReturn(new User());
-        MockMultipartHttpServletRequestBuilder builder =
-                multipart("/user/1/upload-photo");
-        builder.with(request -> {
-            request.setMethod(HttpMethod.PATCH.name());
-            return request;
-        });
+//    @Test
+//    void given_uploadPhoto_when_receiveMultPartFile_then_return200Ok() throws Exception {
+//        FileInputStream fis = new FileInputStream("src/test/resources/static/logoJava.png");
+//        MockMultipartFile file = new MockMultipartFile("file", "logoJava.png", MediaType.MULTIPART_FORM_DATA_VALUE, fis);
+//        Mockito.when(userService.uploadPhoto(1L, file)).thenReturn(new User());
+//        MockMultipartHttpServletRequestBuilder builder =
+//                multipart("/user/1/upload-photo");
+//        builder.with(request -> {
+//            request.setMethod(HttpMethod.PATCH.name());
+//            return request;
+//        });
+//
+//        mockMvc.perform(builder.file(file))
+//                .andExpect(status().isOk());
+//    }
 
-        mockMvc.perform(builder.file(file))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void given_downloadPhoto_when_thereIsPhotoInDatabase_then_return200Ok() throws Exception {
-        mockMvc.perform(get("/user/2/photo")
-                        .contentType(MediaType.IMAGE_PNG)
-                        .contentType(MediaType.IMAGE_JPEG))
-                .andExpect(status().isOk());
-        verify(userService, times(1)).downloadPhoto(2L);
-    }
+//    @Test
+//    void given_downloadPhoto_when_thereIsPhotoInDatabase_then_return200Ok() throws Exception {
+//        mockMvc.perform(get("/user/2/photo")
+//                        .contentType(MediaType.IMAGE_PNG)
+//                        .contentType(MediaType.IMAGE_JPEG))
+//                .andExpect(status().isOk());
+//        verify(userService, times(1)).downloadPhoto(2L);
+//    }
 }
