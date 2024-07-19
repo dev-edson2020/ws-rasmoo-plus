@@ -75,10 +75,10 @@ class SubscriptionTypeControllerTest {
 
     @Test
     void given_create_when_dtoIsOk_then_returnSubscriptionTypeCreated() throws Exception {
-        SubscriptionType subscriptionType = new SubscriptionType(2L, "VITALICIO", null,
-                BigDecimal.valueOf(997), "FOREVER2022");
-        SubscriptionTypeDto dto = new SubscriptionTypeDto(null, "VITALICIO", null,
-                BigDecimal.valueOf(997), "FOREVER2022");
+        SubscriptionType subscriptionType = new SubscriptionType(3L, "VIITALICIO", null,
+                BigDecimal.valueOf(997), "FOREVER2025");
+        SubscriptionTypeDto dto = new SubscriptionTypeDto(null, "VIITALICIO", null,
+                BigDecimal.valueOf(997), "FOREVER2025");
         when(subscriptionTypeService.create(dto)).thenReturn(subscriptionType);
 
         mockMvc.perform(post("/subscription-type")
@@ -86,7 +86,7 @@ class SubscriptionTypeControllerTest {
                         .content(objectMapper.writeValueAsString(dto)))
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.id", is(2)));
+                .andExpect(jsonPath("$.id", is(5)));
     }
 
     @Test
