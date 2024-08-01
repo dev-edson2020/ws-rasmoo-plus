@@ -1,9 +1,11 @@
 package com.client.ws.rasmooplus.service.impl;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.client.ws.rasmooplus.dto.UserDto;
 import com.client.ws.rasmooplus.exception.BadRequestException;
@@ -17,8 +19,8 @@ import com.client.ws.rasmooplus.repository.jpa.UserTypeRepository;
 @Service
 public class UserServiceImpl implements UserService {
 
-//	private static final String PNG = ".png";
-//	private static final String JPEG = ".jpeg";
+	private static final String PNG = ".png";
+	private static final String JPEG = ".jpeg";
 
 	private final UserRepository userRepository;
 	private final UserTypeRepository userTypeRepository;
@@ -51,22 +53,22 @@ public class UserServiceImpl implements UserService {
 		return userRepository.findAll();
 	}
 
-	//	@Override
-//	public User uploadPhoto(Long id, MultipartFile file) throws IOException {
-//		return null;
-//	}
-//
-//	@Override
-//	public byte[] downloadPhoto(Long id) {
-//		User user = findById(id);
-//		if (Objects.isNull(user.getPhoto())) {
-//			throw new BadRequestException("Usuário não possui foto");
-//		}
-//		return user.getPhoto();
-//	}
+		@Override
+	public User uploadPhoto(Long id, MultipartFile file) throws IOException {
+		return null;
+	}
 
-//	private User findById(Long id) {
-//		return userRepository.findById(id).orElseThrow(() -> new NotFoundException("Usuário não encontrado"));
-//	}
+	@Override
+	public byte[] downloadPhoto(Long id) {
+		User user = findById(id);
+		if (Objects.isNull(user.getPhoto())) {
+			throw new BadRequestException("Usuário não possui foto");
+		}
+		return user.getPhoto();
+	}
+
+	private User findById(Long id) {
+		return userRepository.findById(id).orElseThrow(() -> new NotFoundException("Usuário não encontrado"));
+	}
 
 }
